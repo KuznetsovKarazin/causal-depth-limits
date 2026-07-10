@@ -1,14 +1,15 @@
 # Width, Memory, and Delay: A Resource Accounting for the Limits of Flat Multi-Agent Systems
 
-**Oleksandr Kuznetsov**¹² · **Emanuele Frontoni**³
+**Oleksandr Kuznetsov**¹²³ · **Emanuele Frontoni**⁴
 
 ¹ Department of Theoretical and Applied Sciences, eCampus University, Novedrate (CO), Italy
-² SMARTEST Research Center, eCampus University, Novedrate (CO), Italy · Department of Intelligent Software Systems and Technologies, V. N. Karazin Kharkiv National University, Kharkiv, Ukraine
-³ Department of Political Sciences, Communication and International Relations, University of Macerata, Macerata, Italy
+² SMARTEST Research Center, eCampus University, Novedrate (CO), Italy
+³ Department of Intelligent Software Systems and Technologies, V. N. Karazin Kharkiv National University, Kharkiv, Ukraine
+⁴ Department of Political Sciences, Communication and International Relations, University of Macerata, Macerata, Italy
 
 [![Paper](https://img.shields.io/badge/paper-PDF-b31b1b.svg)](paper/latex/main.pdf)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![DOI](https://img.shields.io/badge/DOI-Zenodo-blue.svg)](#citation)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21295164.svg)](https://doi.org/10.5281/zenodo.21295164)
 
 **Status:** research code + full experimental results, submitted to *IEEE
 Transactions on Cybernetics*.
@@ -258,7 +259,9 @@ memory removes the part you cannot forecast.**
 Repeating the key experiments on a nonlinear plant (`x ← x + u + d + 0.15 sin x`)
 leaves the memory ordering intact **once width is sufficient** (N=300: d=2 1.76 < d=1 2.32 < d=0 3.65; but at N=10 integrative PI memory amplifies noise, 16.4, worse than plain P, 13.6, while the resonator still leads at 6.5), and under nonlinear +
 switching disturbance the stale oracle resonator (2.07) and adaptive controller
-(2.45) both beat PI (3.75). The conclusions are not artifacts of linearity.
+(2.45) both beat PI (3.75). The linear resource accounting is robust to this
+class of *bounded* nonlinearities; unbounded nonlinearities (e.g. x^3,
+non-minimum-phase plants) are left for future work.
 
 ### The resource triangle (what Phase 2 buys the theory)
 
@@ -380,8 +383,7 @@ Dockerfile, environment.yml, .github/workflows/ci.yml
 All code, configuration, seeds, and raw results (`results/data/*.csv`) needed
 to reproduce every figure and number in the paper are in this repository. A
 versioned, citable snapshot of this repository is archived on Zenodo:
-**[DOI: 10.5281/zenodo.XXXXXXX](https://doi.org/10.5281/zenodo.XXXXXXX)**
-*(placeholder — filled in after the first Zenodo release; see §8)*.
+**[DOI: 10.5281/zenodo.21295164](https://doi.org/10.5281/zenodo.21295164)**.
 No proprietary data or paid API access is required to reproduce the core
 results; only the optional real-LLM harness (`make e7-real`, Appendix) needs
 an Anthropic API key, and its results are explicitly excluded from the paper's
@@ -399,7 +401,7 @@ If you use this code or build on this work, please cite:
   journal = {IEEE Transactions on Cybernetics},
   year    = {2026},
   note    = {Code and data: \url{https://github.com/KuznetsovKarazin/causal-depth-limits},
-             archived at \url{https://doi.org/10.5281/zenodo.XXXXXXX}}
+             archived at \url{https://doi.org/10.5281/zenodo.21295164}}
 }
 ```
 
