@@ -1,0 +1,52 @@
+# Base task: single-band slow drift + heavy per-agent measurement noise.
+# This is the setting of E1-E3 (scaling & counterexample).
+task:
+  drift_freqs: [0.01]      # rad/step
+  drift_amps:  [0.3]
+  sigma_process: 0.05      # common process noise (not averageable)
+  sigma_meas: 20.0         # per-agent iid measurement noise (averageable, 1/N)
+  delay: 5                 # observation delay, steps
+
+scaling:
+  N_grid: [1, 3, 10, 30, 100, 300, 1000, 3000]
+  seeds: 12
+  T: 20000
+  burn_in: 2000
+  controllers: [P, PI, PID, CASCADE, RES]
+
+tuning:
+  N_tune: 300
+  seeds: 3
+  T: 8000
+  grids:
+    P:       {kp: [0.05, 0.08, 0.12, 0.18, 0.25]}
+    PI:      {kp: [0.05, 0.08, 0.12, 0.18, 0.25], ki: [0.001, 0.002, 0.004, 0.008, 0.016]}
+    PID:     {kp: [0.08, 0.12, 0.18, 0.25], ki: [0.002, 0.004, 0.008], kd: [0.1, 0.3, 0.6]}
+    CASCADE: {kp: [0.08, 0.12, 0.18, 0.25], slow_alpha: [0.003, 0.01, 0.03], slow_ki: [0.002, 0.004, 0.008, 0.016]}
+    RES:     {kp: [0.08, 0.12, 0.18, 0.25], res_gain: [0.001, 0.002, 0.004, 0.008]}
+
+e4_memory_vs_bands:
+  drift_freqs: [0.003, 0.03]
+  drift_amps:  [0.3, 0.3]
+  sigma_meas: 20.0
+  N_grid: [10, 100, 1000]
+  seeds: 8
+  T: 20000
+  bands:                    # cycles/step, for PSD integration
+    slow:  [0.0002, 0.001]
+    mid:   [0.003, 0.008]
+    high:  [0.02, 0.5]
+
+e5_delay:
+  delays: [1, 2, 5, 10, 20]
+  N: 100
+  seeds: 8
+  T: 20000
+
+e6_emergence:
+  N_agents: 8
+  drift_freqs: [0.002, 0.05]
+  drift_amps: [1.0, 1.0]
+  sigma_meas: 3.0
+  delay: 2
+  es: {popsize: 32, sigma: 0.05, lr: 0.02, generations: 300, T: 4000, burn_in: 400}

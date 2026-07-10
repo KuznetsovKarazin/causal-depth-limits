@@ -1,0 +1,49 @@
+case,controller,seed,mse
+chirp,oracle-RES (rho=.999),0,0.4036392731883991
+chirp,oracle-RES (rho=.999),1,0.39515070005754566
+chirp,oracle-RES (rho=.999),2,0.4065471975053281
+chirp,oracle-RES (rho=.999),3,0.40464081047416706
+chirp,oracle-RES (rho=.999),4,0.4233794312511794
+chirp,oracle-RES (rho=.999),5,0.4296128134376251
+chirp,oracle-RES detuned (rho=.99),0,0.9761284511312197
+chirp,oracle-RES detuned (rho=.99),1,0.9402028358781281
+chirp,oracle-RES detuned (rho=.99),2,0.9910526346661197
+chirp,oracle-RES detuned (rho=.99),3,0.9625478020821043
+chirp,oracle-RES detuned (rho=.99),4,0.9990115402181119
+chirp,oracle-RES detuned (rho=.99),5,0.9945987109685773
+chirp,PI,0,0.4960986522688536
+chirp,PI,1,0.49881883096316
+chirp,PI,2,0.5035822224072269
+chirp,PI,3,0.5000199365436039
+chirp,PI,4,0.5177018280982898
+chirp,PI,5,0.5350022045352116
+chirp,ADAPT (learned),0,0.40205768036078193
+chirp,ADAPT (learned),1,0.4095924642748593
+chirp,ADAPT (learned),2,0.39113638309395143
+chirp,ADAPT (learned),3,0.3823147472860487
+chirp,ADAPT (learned),4,0.4059825534014752
+chirp,ADAPT (learned),5,0.4093151175097915
+switching,oracle-RES (rho=.999),0,0.6608414087691804
+switching,oracle-RES (rho=.999),1,0.6755203190464233
+switching,oracle-RES (rho=.999),2,0.6726180066035099
+switching,oracle-RES (rho=.999),3,0.7014274979294857
+switching,oracle-RES (rho=.999),4,0.6701375496612685
+switching,oracle-RES (rho=.999),5,0.6892345193922493
+switching,oracle-RES detuned (rho=.99),0,1.0373409767687651
+switching,oracle-RES detuned (rho=.99),1,1.0306627795965178
+switching,oracle-RES detuned (rho=.99),2,1.0409894588463795
+switching,oracle-RES detuned (rho=.99),3,1.0887335434364445
+switching,oracle-RES detuned (rho=.99),4,1.0488504712663551
+switching,oracle-RES detuned (rho=.99),5,1.0606900760473663
+switching,PI,0,0.5880911179300274
+switching,PI,1,0.5803702639041115
+switching,PI,2,0.5867540520797633
+switching,PI,3,0.5780790284455577
+switching,PI,4,0.5815389113176634
+switching,PI,5,0.6038985897665087
+switching,ADAPT (learned),0,0.7367901637039184
+switching,ADAPT (learned),1,0.872288827964223
+switching,ADAPT (learned),2,0.8372986514165439
+switching,ADAPT (learned),3,0.7480331346382769
+switching,ADAPT (learned),4,0.7751350879401755
+switching,ADAPT (learned),5,0.7810100413927082

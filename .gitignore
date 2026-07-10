@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+.ipynb_checkpoints/
+venv/
+.venv/
+
+# LaTeX build artifacts (only main.pdf is committed, not intermediate files)
+paper/latex/*.aux
+paper/latex/*.bbl
+paper/latex/*.blg
+paper/latex/*.log
+paper/latex/*.out
+paper/latex/*.synctex.gz
+paper/latex/*.fls
+paper/latex/*.fdb_latexmk
+paper/latex/*.toc
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# misc
+nohup.out
+*.tmp
